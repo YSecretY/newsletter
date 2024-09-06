@@ -1,0 +1,16 @@
+﻿services:
+  newsletter:
+    image: newsletter
+    build:
+      context: .
+      dockerfile: src/Newsletter/Dockerfile
+  
+  postgres:
+    image: postgres:latest
+    ports:
+      - "1234:5432"
+    container_name: articles.database
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: TestPass123
+      POSTGRES_DB: articles
