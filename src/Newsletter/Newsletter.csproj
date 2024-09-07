@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\modules\articles\Newsletter.Articles.Presentation\Newsletter.Articles.Presentation.csproj" />
+      <ProjectReference Include="..\modules\articles\Newsletter.Articles.Api\Newsletter.Articles.Api.csproj" />
     </ItemGroup>
 
     <ItemGroup>

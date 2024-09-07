@@ -1,4 +1,4 @@
-using Newsletter.Articles.Presentation;
+using Newsletter.Articles.Api;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 

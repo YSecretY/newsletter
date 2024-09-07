@@ -51,7 +51,7 @@ public class DomainTests
         createdArticle.Content.Value.Should().Be(content);
         createdArticle.Tags.Should().BeEquivalentTo(tags.Select(tag => Tag.New(tag).Value).ToList());
         createdArticle.Slug.Value.Should().Be(slug);
-        createdArticle.TimesReadCount.Should().Be(timesReadCount);
+        createdArticle.ViewsCount.Should().Be(timesReadCount);
         createdArticle.CreatedAt.Should().Be(createdAt);
     }
 

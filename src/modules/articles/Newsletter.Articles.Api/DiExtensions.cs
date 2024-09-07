@@ -2,7 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newsletter.Articles.Infrastructure;
 
-namespace Newsletter.Articles.Presentation;
+namespace Newsletter.Articles.Api;
 
 public static class DiExtensions
 {

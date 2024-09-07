@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{5E2D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "articles", "articles", "{EFF6EA77-C009-4797-90FE-48B996B98542}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.Articles.Presentation", "src\modules\articles\Newsletter.Articles.Presentation\Newsletter.Articles.Presentation.csproj", "{D6B8EBB3-65A8-4E6B-918D-184CC26F8E8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.Articles.Api", "src\modules\articles\Newsletter.Articles.Api\Newsletter.Articles.Api.csproj", "{D6B8EBB3-65A8-4E6B-918D-184CC26F8E8B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.Articles.Domain", "src\modules\articles\Newsletter.Articles.Domain\Newsletter.Articles.Domain.csproj", "{CBD8FC22-04DC-4DA1-88B9-5E4877B5F4EA}"
 EndProject

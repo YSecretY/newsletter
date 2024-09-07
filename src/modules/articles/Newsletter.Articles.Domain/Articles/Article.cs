@@ -18,7 +18,7 @@ public sealed class Article
         Content content,
         List<Tag> tags,
         Slug slug,
-        ulong timesReadCount,
+        ulong viewsCount,
         DateTime createdAt
     )
     {
@@ -28,7 +28,7 @@ public sealed class Article
         Content = content;
         Tags = tags;
         Slug = slug;
-        TimesReadCount = timesReadCount;
+        ViewsCount = viewsCount;
         CreatedAt = createdAt;
     }
 
@@ -79,7 +79,7 @@ public sealed class Article
             content: contentResult.Value,
             tags: createdTags,
             slug: slugResult.Value,
-            timesReadCount: timesReadCount,
+            viewsCount: timesReadCount,
             createdAt: createdAt
         ));
     }
@@ -96,7 +96,7 @@ public sealed class Article
 
     public Slug Slug { get; }
 
-    public ulong TimesReadCount { get; }
+    public ulong ViewsCount { get; }
 
     public DateTime CreatedAt { get; }
 }
