@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Newsletter.Articles.Application\Newsletter.Articles.Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Database\Migrations\" />
+    </ItemGroup>
+
 </Project>

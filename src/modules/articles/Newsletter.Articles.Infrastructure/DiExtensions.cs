@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newsletter.Articles.Application.Articles;
+using Newsletter.Articles.Application.Articles.Repositories;
 using Newsletter.Articles.Domain.Articles;
+using Newsletter.Articles.Infrastructure.Articles.Persistence;
 using Newsletter.Articles.Infrastructure.Database;
 
 namespace Newsletter.Articles.Infrastructure;
@@ -21,5 +24,9 @@ public static class DiExtensions
 
         services.AddDbContext<IArticlesDbContext, ArticlesDbContext>(options =>
             options.UseNpgsql(dbConnection, npgsqlOptions => npgsqlOptions.MigrationsHistoryTable(Schemas.Articles)));
+
+        services.AddScoped<IArticlesUnitOfWork, ArticlesUnitOfWork>();
+        services.AddScoped<IArticlesReadRepository, ArticlesReadRepository>();
+        services.AddScoped<IArticlesWriteRepository, ArticlesWriteRepository>();
     }
 }

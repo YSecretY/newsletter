@@ -63,7 +63,7 @@ internal sealed class ArticlesConfiguration : IEntityTypeConfiguration<Article>
                 c => c.ToList()));
         ;
 
-        builder.Property(article => article.TimesReadCount);
+        builder.Property(article => article.ViewsCount);
 
         builder.Property(article => article.CreatedAt);
     }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Newsletter.Articles.Infrastructure.Database.Migrations
 {
     /// <inheritdoc />
-    public partial class add_articles_table : Migration
+    public partial class create_articles_table : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,7 +25,7 @@ namespace Newsletter.Articles.Infrastructure.Database.Migrations
                     Content = table.Column<string>(type: "character varying(1000000)", maxLength: 1000000, nullable: false),
                     Tags = table.Column<string[]>(type: "character varying(512)[]", nullable: false),
                     Slug = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: false),
-                    TimesReadCount = table.Column<decimal>(type: "numeric(20,0)", nullable: false),
+                    ViewsCount = table.Column<decimal>(type: "numeric(20,0)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>

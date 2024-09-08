@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Newsletter.Articles.Infrastructure.Database.Migrations
 {
     [DbContext(typeof(ArticlesDbContext))]
-    [Migration("20240906204411_add_articles_table")]
-    partial class add_articles_table
+    [Migration("20240908133927_create_articles_table")]
+    partial class create_articles_table
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,13 +53,13 @@ namespace Newsletter.Articles.Infrastructure.Database.Migrations
                         .IsRequired()
                         .HasColumnType("character varying(512)[]");
 
-                    b.Property<decimal>("TimesReadCount")
-                        .HasColumnType("numeric(20,0)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(2056)
                         .HasColumnType("character varying(2056)");
+
+                    b.Property<decimal>("ViewsCount")
+                        .HasColumnType("numeric(20,0)");
 
                     b.HasKey("Id");
 

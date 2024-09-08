@@ -50,13 +50,13 @@ namespace Newsletter.Articles.Infrastructure.Database.Migrations
                         .IsRequired()
                         .HasColumnType("character varying(512)[]");
 
-                    b.Property<decimal>("TimesReadCount")
-                        .HasColumnType("numeric(20,0)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(2056)
                         .HasColumnType("character varying(2056)");
+
+                    b.Property<decimal>("ViewsCount")
+                        .HasColumnType("numeric(20,0)");
 
                     b.HasKey("Id");
 

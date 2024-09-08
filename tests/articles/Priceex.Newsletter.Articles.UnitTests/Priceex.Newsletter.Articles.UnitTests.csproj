@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\src\modules\articles\Newsletter.Articles.Presentation\Newsletter.Articles.Presentation.csproj" />
+      <ProjectReference Include="..\..\..\src\modules\articles\Newsletter.Articles.Api\Newsletter.Articles.Api.csproj" />
       <ProjectReference Include="..\..\shared\Priceex.Newsletter.Tests.Shared\Priceex.Newsletter.Tests.Shared.csproj" />
     </ItemGroup>
 

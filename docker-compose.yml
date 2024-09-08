@@ -1,16 +1,22 @@
 ﻿services:
-  newsletter:
+  newsletter.api:
     image: newsletter
+    container_name: Newsletter.Api
     build:
       context: .
       dockerfile: src/Newsletter/Dockerfile
+    ports:
+      - "8080:8080"
+      - "5001:5001"
   
-  postgres:
+  newsletter.database:
     image: postgres:latest
     ports:
       - "1234:5432"
-    container_name: articles.database
+    container_name: Newsletter.Database
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: TestPass123
       POSTGRES_DB: articles
+    volumes:
+      - ./.containers/db:/var/lib/postgresql/data
