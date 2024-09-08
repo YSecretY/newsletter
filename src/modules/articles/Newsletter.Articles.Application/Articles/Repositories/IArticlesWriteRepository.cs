@@ -1,6 +1,7 @@
 using FluentResults;
 using Newsletter.Articles.Domain.Articles;
 using Newsletter.Articles.Domain.Articles.ValueObjects;
+using Newsletter.Articles.Domain.Articles.ValueObjects.ArticleId;
 
 namespace Newsletter.Articles.Application.Articles.Repositories;
 

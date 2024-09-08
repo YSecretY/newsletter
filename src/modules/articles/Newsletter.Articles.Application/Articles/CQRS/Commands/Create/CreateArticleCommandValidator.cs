@@ -5,7 +5,7 @@ using Newsletter.Articles.Domain.Articles.ValueObjects.Slugs;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Tags;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Titles;
 
-namespace Newsletter.Articles.Application.Articles.Commands.Create;
+namespace Newsletter.Articles.Application.Articles.CQRS.Commands.Create;
 
 internal sealed class CreateArticleCommandValidator : AbstractValidator<CreateArticleCommand>
 {

@@ -1,7 +1,7 @@
 using FluentResults;
 using MediatR;
 
-namespace Newsletter.Articles.Application.Articles.Commands.Create;
+namespace Newsletter.Articles.Application.Articles.CQRS.Commands.Create;
 
 public sealed record CreateArticleCommand(
     string Title,

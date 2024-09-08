@@ -3,6 +3,7 @@ using FluentAssertions;
 using FluentResults;
 using Newsletter.Articles.Domain.Articles;
 using Newsletter.Articles.Domain.Articles.ValueObjects;
+using Newsletter.Articles.Domain.Articles.ValueObjects.ArticleId;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Contents;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Descriptions;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Slugs;
@@ -19,7 +20,7 @@ public class DomainTests
         // Arrange
         Faker faker = new();
 
-        ArticleId articleId = ArticleId.New();
+        string articleId = ArticleId.NewAsString();
         string title = faker.Lorem.Sentence();
         string description = faker.Lorem.Paragraph();
         string content = faker.Lorem.Paragraphs(3);
@@ -239,7 +240,7 @@ public class DomainTests
         // Arrange
         Faker faker = new();
 
-        ArticleId articleId = ArticleId.New();
+        string articleId = ArticleId.NewAsString();
         string title = faker.Lorem.Sentence();
         string description = faker.Lorem.Paragraph();
         string content = faker.Lorem.Paragraphs(3);

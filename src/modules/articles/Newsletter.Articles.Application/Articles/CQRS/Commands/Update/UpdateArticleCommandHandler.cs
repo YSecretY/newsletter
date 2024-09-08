@@ -3,8 +3,9 @@ using MediatR;
 using Newsletter.Articles.Application.Articles.Repositories;
 using Newsletter.Articles.Domain.Articles;
 using Newsletter.Articles.Domain.Articles.ValueObjects;
+using Newsletter.Articles.Domain.Articles.ValueObjects.ArticleId;
 
-namespace Newsletter.Articles.Application.Articles.Commands.Update;
+namespace Newsletter.Articles.Application.Articles.CQRS.Commands.Update;
 
 public sealed class UpdateArticleCommandHandler(
     IArticlesWriteRepository articlesWriteRepository,
@@ -14,7 +15,7 @@ public sealed class UpdateArticleCommandHandler(
     public async Task<Result> Handle(UpdateArticleCommand command, CancellationToken cancellationToken)
     {
         Result<Article> articleResult = Article.New(
-            articleId: ArticleId.From(command.Id),
+            articleId: command.Id,
             title: command.CreateArticleCommand.Title,
             description: command.CreateArticleCommand.Description,
             content: command.CreateArticleCommand.Content,

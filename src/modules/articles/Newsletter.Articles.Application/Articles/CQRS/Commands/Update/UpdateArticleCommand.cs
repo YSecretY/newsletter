@@ -1,8 +1,8 @@
 using FluentResults;
 using MediatR;
-using Newsletter.Articles.Application.Articles.Commands.Create;
+using Newsletter.Articles.Application.Articles.CQRS.Commands.Create;
 
-namespace Newsletter.Articles.Application.Articles.Commands.Update;
+namespace Newsletter.Articles.Application.Articles.CQRS.Commands.Update;
 
 public sealed record UpdateArticleCommand(
     string Id,

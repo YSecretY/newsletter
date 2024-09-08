@@ -29,7 +29,7 @@ public class Tag : ValueObject
     public static Result<List<Tag>> NewList(List<string> tags)
     {
         List<Tag> createdTags = new(tags.Count);
-        
+
         foreach (string tag in tags)
         {
             Result<Tag> tagResult = Tag.New(tag);
@@ -41,6 +41,9 @@ public class Tag : ValueObject
 
         return createdTags;
     }
+
+    public static List<string> ListFrom(IEnumerable<Tag> tags) =>
+        tags.Select(tag => tag.Value).ToList();
 
     public override IEnumerable<object> GetAtomicValues()
     {

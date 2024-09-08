@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Newsletter.Articles.Application.Articles.Repositories;
 using Newsletter.Articles.Domain.Articles;
 using Newsletter.Articles.Domain.Articles.ValueObjects;
+using Newsletter.Articles.Domain.Articles.ValueObjects.ArticleId;
 using Newsletter.Articles.Infrastructure.Articles.Persistence.Errors;
 using Newsletter.Articles.Infrastructure.Database;
 
