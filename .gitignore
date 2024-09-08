@@ -6,6 +6,9 @@
 # dotenv files
 .env
 
+# docker
+.containers*
+
 # User-specific files
 *.rsuser
 *.suo
