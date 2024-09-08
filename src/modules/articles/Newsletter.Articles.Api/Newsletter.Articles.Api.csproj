@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\shared\Newsletter.Shared.Presentation\Newsletter.Shared.Presentation.csproj" />
       <ProjectReference Include="..\Newsletter.Articles.Application\Newsletter.Articles.Application.csproj" />
       <ProjectReference Include="..\Newsletter.Articles.Infrastructure\Newsletter.Articles.Infrastructure.csproj" />
     </ItemGroup>

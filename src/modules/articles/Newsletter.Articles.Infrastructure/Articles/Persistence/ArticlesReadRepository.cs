@@ -6,21 +6,16 @@ using Newsletter.Articles.Infrastructure.Database;
 
 namespace Newsletter.Articles.Infrastructure.Articles.Persistence;
 
-public sealed class ArticlesReadRepository : IArticlesReadRepository
+public sealed class ArticlesReadRepository(IArticlesDbContext dbContext) : IArticlesReadRepository
 {
-    private readonly IArticlesDbContext _dbContext;
-
-    internal ArticlesReadRepository(IArticlesDbContext dbContext) =>
-        _dbContext = dbContext;
-
     public async Task<Article?> GetByIdAsync(ArticleId id, CancellationToken cancellationToken = default) =>
-        await _dbContext.Articles
+        await dbContext.Articles
             .AsNoTracking()
             .FirstOrDefaultAsync(article => article.Id == id, cancellationToken);
 
     public async Task<List<Article>> GetListAsync(uint pageSize, uint pageNumber, OrderArticlesBy? orderArticlesBy, CancellationToken cancellationToken = default)
     {
-        IQueryable<Article> query = _dbContext.Articles.AsNoTracking();
+        IQueryable<Article> query = dbContext.Articles.AsNoTracking();
 
         query = orderArticlesBy switch
         {

@@ -26,6 +26,22 @@ public class Tag : ValueObject
         return Result.Ok(new Tag(tag));
     }
 
+    public static Result<List<Tag>> NewList(List<string> tags)
+    {
+        List<Tag> createdTags = new(tags.Count);
+        
+        foreach (string tag in tags)
+        {
+            Result<Tag> tagResult = Tag.New(tag);
+            if (tagResult.IsFailed)
+                return Result.Fail(tag);
+
+            createdTags.Add(tagResult.Value);
+        }
+
+        return createdTags;
+    }
+
     public override IEnumerable<object> GetAtomicValues()
     {
         yield return Value;

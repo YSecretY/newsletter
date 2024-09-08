@@ -44,44 +44,34 @@ public sealed class Article
     )
     {
         Result<Title> titleResult = Title.New(title);
-        if (titleResult.IsFailed)
-            return Result.Fail(titleResult.Errors);
-
         Result<Description> descriptionResult = Description.New(description);
-        if (descriptionResult.IsFailed)
-            return Result.Fail(descriptionResult.Errors);
-
         Result<Content> contentResult = Content.New(content);
-        if (contentResult.IsFailed)
-            return Result.Fail(contentResult.Errors);
-
-        List<Tag> createdTags = new(tags.Count);
-        foreach (string tag in tags)
-        {
-            Result<Tag> tagResult = Tag.New(tag);
-            if (tagResult.IsFailed)
-                return Result.Fail(tag);
-
-            createdTags.Add(tagResult.Value);
-        }
-
+        Result<List<Tag>> tagsResult = Tag.NewList(tags);
         Result<Slug> slugResult = Slug.New(slug);
-        if (slugResult.IsFailed)
-            return Result.Fail(slug);
 
-        if (createdAt > DateTime.UtcNow)
-            return Result.Fail(ArticlesErrors.ArticleCreatedInFutureError);
+        Result validationResult = Result.Merge(
+            titleResult,
+            descriptionResult,
+            contentResult,
+            tagsResult,
+            slugResult,
+            Result.FailIf(createdAt > DateTime.UtcNow, ArticlesErrors.ArticleCreatedInFutureError)
+        );
 
-        return Result.Ok(new Article(
-            id: articleId,
-            title: titleResult.Value,
-            description: descriptionResult.Value,
-            content: contentResult.Value,
-            tags: createdTags,
-            slug: slugResult.Value,
-            viewsCount: timesReadCount,
-            createdAt: createdAt
-        ));
+        if (validationResult.IsFailed)
+            return Result.Fail(validationResult.Errors);
+
+        return Result.Ok(
+            new Article(
+                id: articleId,
+                title: titleResult.Value,
+                description: descriptionResult.Value,
+                content: contentResult.Value,
+                tags: tagsResult.Value,
+                slug: slugResult.Value,
+                viewsCount: timesReadCount,
+                createdAt: createdAt
+            ));
     }
 
     public ArticleId Id { get; }

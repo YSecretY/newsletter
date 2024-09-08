@@ -1,15 +1,11 @@
 using Newsletter.Articles.Application.Articles;
+using Newsletter.Articles.Domain.Articles;
 using Newsletter.Articles.Infrastructure.Database;
 
 namespace Newsletter.Articles.Infrastructure.Articles.Persistence;
 
-public sealed class ArticlesUnitOfWork : IArticlesUnitOfWork
+public sealed class ArticlesUnitOfWork(IArticlesDbContext dbContext) : IArticlesUnitOfWork
 {
-    private readonly IArticlesDbContext _dbContext;
-
-    internal ArticlesUnitOfWork(IArticlesDbContext dbContext) =>
-        _dbContext = dbContext;
-
     public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default) =>
-        await _dbContext.SaveChangesAsync(cancellationToken);
+        await dbContext.SaveChangesAsync(cancellationToken);
 }

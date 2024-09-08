@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newsletter.Articles.Application.Articles;
 using Newsletter.Articles.Application.Articles.Repositories;
+using Newsletter.Articles.Domain.Articles;
 using Newsletter.Articles.Infrastructure.Articles.Persistence;
 using Newsletter.Articles.Infrastructure.Database;
 

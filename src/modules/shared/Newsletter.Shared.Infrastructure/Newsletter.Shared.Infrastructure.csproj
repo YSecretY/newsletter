@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Newsletter.Shared.Application\Newsletter.Shared.Application.csproj" />
+    </ItemGroup>
+
 </Project>
