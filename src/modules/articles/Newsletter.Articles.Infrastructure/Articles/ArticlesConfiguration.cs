@@ -20,7 +20,7 @@ internal sealed class ArticlesConfiguration : IEntityTypeConfiguration<Article>
         builder.Property(article => article.Id)
             .HasConversion(
                 articleId => articleId.Value,
-                dbId => ArticleId.New(dbId)
+                dbId => ArticleId.From(dbId)
             );
 
         builder.Property(article => article.Title)

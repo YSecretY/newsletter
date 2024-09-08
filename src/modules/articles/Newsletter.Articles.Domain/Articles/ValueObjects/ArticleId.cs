@@ -13,7 +13,9 @@ public class ArticleId : ValueObject
 
     public static ArticleId New() => new(Guid.NewGuid());
 
-    public static ArticleId New(Guid guid) => new(guid);
+    public static ArticleId From(Guid guid) => new(guid);
+
+    public static ArticleId From(string id) => new(Guid.Parse(id));
 
     public override IEnumerable<object> GetAtomicValues()
     {

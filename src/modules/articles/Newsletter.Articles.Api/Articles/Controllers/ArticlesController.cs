@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Newsletter.Articles.Application.Articles.Commands.Create;
+using Newsletter.Articles.Application.Articles.Commands.Update;
 using Newsletter.Shared.Presentation.Extensions;
 
 namespace Newsletter.Articles.Api.Articles.Controllers;
@@ -10,5 +11,9 @@ public sealed class ArticlesController(ISender mediator) : ControllerBase
 {
     [HttpPost("create")]
     public async Task<IActionResult> Create([FromBody] CreateArticleCommand command, CancellationToken cancellationToken) =>
+        (await mediator.Send(command, cancellationToken)).ToActionResult();
+
+    [HttpPost("update")]
+    public async Task<IActionResult> Update([FromBody] UpdateArticleCommand command, CancellationToken cancellationToken) =>
         (await mediator.Send(command, cancellationToken)).ToActionResult();
 }
