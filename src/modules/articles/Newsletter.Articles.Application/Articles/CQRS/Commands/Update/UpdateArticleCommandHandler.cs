@@ -2,8 +2,6 @@ using FluentResults;
 using MediatR;
 using Newsletter.Articles.Application.Articles.Repositories;
 using Newsletter.Articles.Domain.Articles;
-using Newsletter.Articles.Domain.Articles.ValueObjects;
-using Newsletter.Articles.Domain.Articles.ValueObjects.ArticleId;
 
 namespace Newsletter.Articles.Application.Articles.CQRS.Commands.Update;
 

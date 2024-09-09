@@ -1,6 +1,5 @@
 using Newsletter.Articles.Application.Articles;
 using Newsletter.Articles.Domain.Articles;
-using Newsletter.Articles.Infrastructure.Database;
 
 namespace Newsletter.Articles.Infrastructure.Articles.Persistence;
 

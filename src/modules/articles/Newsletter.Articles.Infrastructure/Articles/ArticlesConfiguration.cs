@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Newsletter.Articles.Domain.Articles;
-using Newsletter.Articles.Domain.Articles.ValueObjects;
 using Newsletter.Articles.Domain.Articles.ValueObjects.ArticleId;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Contents;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Descriptions;

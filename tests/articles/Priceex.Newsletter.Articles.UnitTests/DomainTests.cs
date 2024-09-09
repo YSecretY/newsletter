@@ -2,7 +2,6 @@ using Bogus;
 using FluentAssertions;
 using FluentResults;
 using Newsletter.Articles.Domain.Articles;
-using Newsletter.Articles.Domain.Articles.ValueObjects;
 using Newsletter.Articles.Domain.Articles.ValueObjects.ArticleId;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Contents;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Descriptions;

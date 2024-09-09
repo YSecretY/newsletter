@@ -1,11 +1,5 @@
 using Newsletter.Articles.Domain.Articles;
-using Newsletter.Articles.Domain.Articles.ValueObjects;
-using Newsletter.Articles.Domain.Articles.ValueObjects.ArticleId;
-using Newsletter.Articles.Domain.Articles.ValueObjects.Contents;
-using Newsletter.Articles.Domain.Articles.ValueObjects.Descriptions;
-using Newsletter.Articles.Domain.Articles.ValueObjects.Slugs;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Tags;
-using Newsletter.Articles.Domain.Articles.ValueObjects.Titles;
 
 namespace Newsletter.Articles.Application.Articles;
 

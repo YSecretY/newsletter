@@ -2,10 +2,7 @@ using FluentResults;
 using Microsoft.EntityFrameworkCore;
 using Newsletter.Articles.Application.Articles.Repositories;
 using Newsletter.Articles.Domain.Articles;
-using Newsletter.Articles.Domain.Articles.ValueObjects;
 using Newsletter.Articles.Domain.Articles.ValueObjects.ArticleId;
-using Newsletter.Articles.Infrastructure.Articles.Persistence.Errors;
-using Newsletter.Articles.Infrastructure.Database;
 
 namespace Newsletter.Articles.Infrastructure.Articles.Persistence;
 
@@ -27,7 +24,7 @@ public sealed class ArticlesWriteRepository(IArticlesDbContext dbContext) : IArt
             .FirstOrDefaultAsync(article => article.Id == id, cancellationToken);
 
         if (article is null)
-            return Result.Fail(ArticlesPersistenceErrors.ArticleDoesNotExistError);
+            return Result.Fail(ArticlesErrors.ArticleIsNotFoundError);
 
         dbContext.Articles.Remove(article);
 
