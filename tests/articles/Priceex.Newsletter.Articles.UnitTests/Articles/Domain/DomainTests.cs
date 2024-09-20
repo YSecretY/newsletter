@@ -9,7 +9,7 @@ using Newsletter.Articles.Domain.Articles.ValueObjects.Slugs;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Tags;
 using Newsletter.Articles.Domain.Articles.ValueObjects.Titles;
 
-namespace Priceex.Newsletter.Articles.UnitTests;
+namespace Priceex.Newsletter.Articles.UnitTests.Articles.Domain;
 
 public class DomainTests
 {
@@ -45,7 +45,7 @@ public class DomainTests
 
         Article createdArticle = articleCreationResult.Value;
 
-        createdArticle.Id.Should().Be(articleId);
+        createdArticle.Id.Value.Should().Be(articleId);
         createdArticle.Title.Value.Should().Be(title);
         createdArticle.Description.Value.Should().Be(description);
         createdArticle.Content.Value.Should().Be(content);

@@ -32,7 +32,7 @@ public class Tag : ValueObject
 
         foreach (string tag in tags)
         {
-            Result<Tag> tagResult = Tag.New(tag);
+            Result<Tag> tagResult = New(tag);
             if (tagResult.IsFailed)
                 return Result.Fail(tag);
 
