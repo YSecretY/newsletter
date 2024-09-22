@@ -61,7 +61,6 @@ internal sealed class ArticlesConfiguration : IEntityTypeConfiguration<Article>
                 (c1, c2) => c1 != null && c2 != null && c1.SequenceEqual(c2),
                 c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
                 c => c.ToList()));
-        ;
 
         builder.Property(article => article.ViewsCount);
 

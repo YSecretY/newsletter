@@ -36,7 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.Users.Applicatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.Users.Infrastructure", "src\modules\users\Newsletter.Users.Infrastructure\Newsletter.Users.Infrastructure.csproj", "{595A10D0-8115-4AFE-AE06-EF182488599D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.Users.Presentation", "src\modules\users\Newsletter.Users.Presentation\Newsletter.Users.Presentation.csproj", "{5BF4F075-2351-4272-8955-99638BB5B1D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newsletter.Users.Api", "src\modules\users\Newsletter.Users.Api\Newsletter.Users.Api.csproj", "{5BF4F075-2351-4272-8955-99638BB5B1D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "articles", "articles", "{09ECB404-CF39-447A-93C3-0AE99B920168}"
 EndProject

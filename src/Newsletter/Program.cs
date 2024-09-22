@@ -3,13 +3,15 @@ using Newsletter.Articles.Api;
 using Newsletter.Extensions;
 using Newsletter.Shared.Application;
 using Newsletter.Shared.Infrastructure;
+using Newsletter.Users.Api;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddSharedInfrastructure()
     .AddSharedApplication([Newsletter.Articles.Application.AssemblyReference.Assembly])
-    .AddArticlesApi(builder.Configuration);
+    .AddArticlesApi(builder.Configuration)
+    .AddUsersApi(builder.Configuration);
 
 builder.Services
     .AddProblemDetails()

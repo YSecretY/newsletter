@@ -18,6 +18,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\modules\articles\Newsletter.Articles.Api\Newsletter.Articles.Api.csproj" />
+      <ProjectReference Include="..\modules\users\Newsletter.Users.Api\Newsletter.Users.Api.csproj" />
     </ItemGroup>
 
     <ItemGroup>
